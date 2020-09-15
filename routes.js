@@ -10,7 +10,7 @@ const routes = express.Router();
 const pool = require("./connection");
 const { response } = require("express");
 //
-routes.get("/quotes", (req, res) => {
+routes.get("/results", (req, res) => {
   pool.query("SELECT * FROM quotes").then((response) => {
     res.json(response.rows);
   });
