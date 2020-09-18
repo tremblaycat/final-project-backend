@@ -16,6 +16,14 @@ routes.get("/results", (req, res) => {
   });
 });
 
+routes.get("/stream", (req, res) => {
+  pool
+    .query("SELECT quote, author FROM quotes ORDER BY RANDOM() LIMIT 20")
+    .then((response) => {
+      res.json(response.rows);
+    });
+});
+
 routes.get("/selected", (req, res) => {
   let adjective = req.query.selectedFeeling;
   console.log(adjective);
