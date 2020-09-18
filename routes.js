@@ -10,11 +10,11 @@ const routes = express.Router();
 const pool = require("./connection");
 const { response, request } = require("express");
 //
-routes.get("/results", (req, res) => {
-  pool.query("SELECT * FROM quotes").then((response) => {
-    res.json(response.rows);
-  });
-});
+// routes.get("/results", (req, res) => {
+//   pool.query("SELECT * FROM quotes").then((response) => {
+//     res.json(response.rows);
+//   });
+// });
 
 routes.get("/selected", (req, res) => {
   let adjective = req.query.selectedFeeling;
